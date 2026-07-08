@@ -1,0 +1,104 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Su et~al.(2023)]{Su2023}
+Hongjin Su et~al.
+\newblock One embedder, any task: Instruction-finetuned text embeddings.
+\newblock \emph{Findings of ACL 2023}, 2023.
+
+\bibitem[Lu et~al.(2023)Lu, Xu, and Zhang]{Lu2023}
+Zhiqiang Lu, Weijun Xu, and Zhijun Zhang.
+\newblock Diagonal of pseudoinverse of graph laplacian: Fast estimation and
+  exact results.
+\newblock \emph{arXiv preprint arXiv:2310.05527}, 2023.
+
+\bibitem[Zhang et~al.(2026)]{Zhang2026}
+Li~Zhang et~al.
+\newblock Automatic text readability assessment for educational content based
+  on graph representation learning.
+\newblock \emph{Scientific Reports}, 16:\penalty0 11308, 2026.
+
+\bibitem[Ehret(2018)]{Ehret2018}
+Katharina Ehret.
+\newblock Kolmogorov complexity as a universal measure of language complexity.
+\newblock In \emph{Proceedings of the Meeting of the Linguistic Association of
+  Canada and the United States}, 2018.
+
+\bibitem[Klein et~al.(2025)]{Klein2025}
+Katherine~G Klein et~al.
+\newblock Readability formulas, systems and llms are poor predictors of reading
+  ease.
+\newblock \emph{Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, 2025.
+\newblock arXiv:2502.11150.
+
+\bibitem[Ellens et~al.(2011)]{Ellens2011}
+Wendy Ellens et~al.
+\newblock Effective graph resistance.
+\newblock \emph{Linear Algebra and its Applications}, 435\penalty0
+  (10):\penalty0 2491--2506, 2011.
+
+\bibitem[Flesch(1948)]{Flesch1948}
+Rudolf Flesch.
+\newblock A new readability yardstick.
+\newblock \emph{Journal of Applied Psychology}, 32\penalty0 (3):\penalty0
+  221--233, 1948.
+
+\bibitem[Mesgar and Strube(2015)]{Mesgar2015}
+Mohsen Mesgar and Michael Strube.
+\newblock Graph-based coherence modeling for assessing readability.
+\newblock \emph{Proceedings of the Fourth Joint Conference on Lexical and
+  Computational Semantics}, pages 309--318, 2015.
+
+\bibitem[Kincaid et~al.(1975)]{Kincaid1975}
+J~Peter Kincaid et~al.
+\newblock Derivation of new readability formulas (automated readability index,
+  fog count and flesch reading ease formula) for navy enlisted personnel.
+\newblock Technical report, Naval Technical Training Command, 1975.
+
+\bibitem[Reimers and Gurevych(2019)]{Reimers2019}
+Nils Reimers and Iryna Gurevych.
+\newblock Sentence-bert: Sentence embeddings using siamese bert-networks.
+\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}, 2019.
+
+\bibitem[Vajjala and Lucic(2018)]{Vajjala2018}
+Sowmya Vajjala and Ivana Lucic.
+\newblock Onestopenglish corpus: A new corpus for automatic readability
+  assessment and text simplification.
+\newblock In \emph{Proceedings of the Workshop on Automatic Text
+  Simplification}, pages 297--304, 2018.
+
+\bibitem[Deutsch et~al.(2020)Deutsch, Jasbi, and Shieber]{Deutsch2020}
+Tobias Deutsch, Masoud Jasbi, and Stuart Shieber.
+\newblock Linguistic features for readability assessment.
+\newblock \emph{arXiv preprint arXiv:2006.00377}, 2020.
+
+\bibitem[Coleman and Liau(1975)]{Coleman1975}
+Merrill Coleman and Ta~Lin Liau.
+\newblock A computer readability formula designed for machine scoring.
+\newblock \emph{Journal of Applied Psychology}, 60\penalty0 (2):\penalty0
+  283--284, 1975.
+
+\bibitem[Crossley et~al.(2021)]{Crossley2021}
+Scott Crossley et~al.
+\newblock The commonlit ease of readability (clear) corpus.
+\newblock \emph{Behavior Research Methods}, 53\penalty0 (4):\penalty0
+  1583--1599, 2021.
+
+\bibitem[McLaughlin(1969)]{McLaughlin1969}
+G~Harry McLaughlin.
+\newblock Smog grading: a new readability formula.
+\newblock \emph{Journal of Reading}, 12\penalty0 (8):\penalty0 639--646, 1969.
+
+\bibitem[Guinaudeau and Strube(2013)]{Guinaudeau2013}
+Camille Guinaudeau and Michael Strube.
+\newblock Graph-based local coherence modeling.
+\newblock In \emph{Proceedings of the 51st Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}, pages 93--103, 2013.
+
+\end{thebibliography}

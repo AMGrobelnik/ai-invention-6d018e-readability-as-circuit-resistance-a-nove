@@ -1,0 +1,14 @@
+{
+  "title": "Readability as Circuit Resistance",
+  "summary": "Successfully generated a publication-ready LaTeX paper titled 'Readability as Circuit Resistance: A Novel Physically-Motivated Metric Using Effective Graph Resistance'. The paper proposes a novel readability metric based on effective electrical resistance of discourse graphs and evaluates it on the CLEAR corpus (N=4,724 texts with human judgments). Key sections include: Introduction, Related Work, Methods (with mathematical formulation of effective resistance and Kirchhoff index), Experiments (evaluation on CLEAR corpus with comparison to Flesch-Kincaid, SMOG, Coleman-Liau), Discussion (analysis of failure modes), and Conclusion. All 3 figures from available_figures were included: fig1 (scatter plot showing sequential graph ER reduces to sentence count), fig2 (correlation comparison across methods), fig3 (runtime scaling). The bibliography (references.bib) contains 17 entries. The paper was compiled to a 13-page PDF using pdflatex and bibtex. Visual review of all pages confirmed proper layout with figures, tables, and equations correctly rendered. Minor overfull hbox warnings (4.3pt) remain but are acceptable for publication. The paper honestly reports negative results: sequential graph construction reduces to sentence count (r=0.32), and similarity-based construction achieves low correlation (r=0.12), while traditional formulas perform better (Flesch-Kincaid r=0.50, SMOG r=0.55).",
+  "out_expected_files": {
+    "paper_tex_path": "paper.tex",
+    "paper_pdf_path": "paper.pdf",
+    "references_bib_path": "references.bib",
+    "figure_paths": [
+      "figures/fig1_v0.jpg",
+      "figures/fig2_v0.jpg",
+      "figures/fig3_v0.jpg"
+    ]
+  }
+}
