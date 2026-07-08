@@ -1,0 +1,21 @@
+[project]
+name = "readability-dataset-artifact"
+version = "1.0.0"
+requires-python = ">=3.12"
+dependencies = [
+    "datasets==5.0.0",
+    "huggingface-hub==1.20.1",
+    "jsonref==1.1.0",
+    "jsonschema==4.26.0",
+    "jsonschema-specifications==2025.9.1",
+    "loguru==0.7.3",
+    "numpy==2.5.0",
+    "pandas==3.0.3",
+    "pyarrow==24.0.0",
+    "python-dateutil==2.9.0.post0",
+    "pyyaml==6.0.3",
+    "referencing==0.37.0",
+    "rpds-py==2026.5.1",
+    "tqdm==4.68.3",
+    "xxhash==3.7.1",
+]

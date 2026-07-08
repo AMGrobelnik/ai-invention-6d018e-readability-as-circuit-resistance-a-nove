@@ -1,0 +1,19 @@
+{
+  "title": "Readability datasets for ML scoring",
+  "layman_summary": "Collected and standardized 2 readability datasets (OneStopEnglish and agentlans/readability) with text and readability scores for training ML models to predict text reading difficulty.",
+  "summary": "Successfully collected 4 readability datasets from HuggingFace Hub, evaluated their provenance via web research, and selected the 2 best datasets for the experiment. The selected datasets are: 1) SetFit/onestop_english (567 examples, 3-class classification: Elementary/Intermediate/Advance) - an established benchmark with published paper (Vajala and Lučić, 2018), and 2) agentlans/readability (104,761 examples, regression with continuous grade scores 0-20) - diverse text sources including Wikipedia, ArXiv, and Fineweb-Edu. Both datasets were standardized to exp_sel_data_out.json schema with input (text), output (readability label/score), and metadata fields (fold, task_type, etc.). The full dataset (119MB) was split into 2 parts under 100MB each as required. All outputs validated against schema and preview/mini versions generated.",
+  "out_expected_files": {
+    "script": "data.py",
+    "datasets": [
+      {
+        "full": ["full_data_out/full_data_out_1.json", "full_data_out/full_data_out_2.json"],
+        "mini": "mini_data_out.json",
+        "preview": "preview_data_out.json"
+      }
+    ]
+  },
+  "upload_ignore_regexes": [
+    "(^|/)temp/",
+    "(^|/)\\.venv/"
+  ]
+}

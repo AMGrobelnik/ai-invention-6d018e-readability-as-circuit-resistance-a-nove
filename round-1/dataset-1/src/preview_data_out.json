@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "description": "Selected readability datasets for ML-based readability scoring experiment",
+    "num_datasets": 2,
+    "total_examples": 105328
+  },
+  "datasets": [
+    {
+      "dataset": "SetFit_onestop_english_combined",
+      "examples": [
+        {
+          "input": "1 Flappy Bird \nBe careful what you wish for, especially if you want to invent something new. Recently, Dong Nguyen, the designer of the mobile game Flappy Bird, pulled it from app stores, saying its s...",
+          "output": "Advance",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 0
+        },
+        {
+          "input": "The last time she performed, we did not have mobile phones. Now, 35 years later, as she performs again, singer Kate Bush sees a very different world. \nThese days, most concerts are now lit up with pho...",
+          "output": "Elementary",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 1
+        },
+        {
+          "input": "Noise from ships may disturb animals such as killer whales and dolphins much more than we thought before. New research shows that underwater noise could stop these animals communicating and make it mo...",
+          "output": "Elementary",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 2
+        }
+      ]
+    },
+    {
+      "dataset": "agentlans_readability_train",
+      "examples": [
+        {
+          "input": "We study the adversarial multi-armed bandit problem where partial\nobservations are available and where, in addition to the loss incurred for each\naction, a \\emph{switching cost} is incurred for shifti...",
+          "output": "12.965",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_source": "arxiv",
+          "metadata_row_index": 0
+        },
+        {
+          "input": "The current supernova detection technique used in IceCube relies on the\nsudden deviation of the summed photomultiplier noise rate from its nominal\nvalue during the neutrino burst, making IceCube a $\\a...",
+          "output": "18.85",
+          "metadata_fold": 1,
+          "metadata_task_type": "regression",
+          "metadata_source": "arxiv",
+          "metadata_row_index": 1
+        },
+        {
+          "input": "Pascoe could be eccentric, and he would leave during important meetings because he always went to bed at 9pm. He died at his holiday home in Springfield on  11 September 1976.",
+          "output": "8.2",
+          "metadata_fold": 2,
+          "metadata_task_type": "regression",
+          "metadata_source": "wikipedia-en",
+          "metadata_row_index": 2
+        }
+      ]
+    }
+  ]
+}

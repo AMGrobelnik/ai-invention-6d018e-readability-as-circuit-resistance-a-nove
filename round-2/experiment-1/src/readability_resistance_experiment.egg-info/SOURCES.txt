@@ -1,0 +1,7 @@
+method.py
+pyproject.toml
+readability_resistance_experiment.egg-info/PKG-INFO
+readability_resistance_experiment.egg-info/SOURCES.txt
+readability_resistance_experiment.egg-info/dependency_links.txt
+readability_resistance_experiment.egg-info/requires.txt
+readability_resistance_experiment.egg-info/top_level.txt

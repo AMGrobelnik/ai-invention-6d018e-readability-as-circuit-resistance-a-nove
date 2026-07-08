@@ -1,0 +1,31 @@
+[project]
+name = "clear-corpus-readability-dataset"
+version = "1.0.0"
+description = "CLEAR Corpus dataset for readability scoring research"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas==3.0.3",
+    "numpy==2.5.1",
+    "openpyxl==3.1.5",
+    "nltk==3.10.0",
+    "textstat==0.7.13",
+    "loguru==0.7.3",
+    "click==8.4.2",
+    "defusedxml==0.7.1",
+    "et-xmlfile==2.0.0",
+    "joblib==1.5.3",
+    "pyphen==0.17.2",
+    "python-dateutil==2.9.0.post0",
+    "regex==2026.6.28",
+    "setuptools==83.0.0",
+    "six==1.17.0",
+    "tqdm==4.68.4",
+    "wheel==0.45.1"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

@@ -1,0 +1,628 @@
+{
+  "metadata": {
+    "experiment_name": "effective_resistance_readability",
+    "results": {
+      "effective_resistance": {
+        "pearson_r": 0.7975400814361975,
+        "pearson_p": 4.138928297599867e-12,
+        "spearman_rho": 0.8122276778284577,
+        "spearman_p": 8.114636275631306e-13,
+        "mae": 0.5230414979918617,
+        "rmse": 0.6363331180502907
+      },
+      "baselines": {
+        "flesch_kincaid": {
+          "pearson_r": 0.8706148647299945,
+          "pearson_p": 2.1347621333740357e-16,
+          "spearman_rho": 0.8173677017299985,
+          "spearman_p": 4.4351903309673495e-13,
+          "mae": 11.485413057530705,
+          "rmse": 13.409657289498254
+        },
+        "smog": {
+          "pearson_r": 0.8490410557183825,
+          "pearson_p": 6.701243866277949e-15,
+          "spearman_rho": 0.8585915117112137,
+          "spearman_p": 1.563333646484026e-15,
+          "mae": 8.245109502838297,
+          "rmse": 9.723304448130591
+        },
+        "coleman_liau": {
+          "pearson_r": 0.8630214809807,
+          "pearson_p": 7.673527746742802e-16,
+          "spearman_rho": 0.8143202368187633,
+          "spearman_p": 6.359697722966123e-13,
+          "mae": 16.041830381383324,
+          "rmse": 18.384540094438083
+        },
+        "avg_sentence_length": {
+          "pearson_r": 0.8216463626515891,
+          "pearson_p": 2.6435624922591556e-13,
+          "spearman_rho": 0.7855023612016802,
+          "spearman_p": 1.4290936674824764e-11,
+          "mae": 5.933333333333333,
+          "rmse": 6.6849748607522
+        },
+        "avg_word_length": {
+          "pearson_r": 0.8595604627505593,
+          "pearson_p": 1.3407687488105497e-15,
+          "spearman_rho": 0.8183831317993273,
+          "spearman_p": 3.9274653130607176e-13,
+          "mae": 1.7283012281835812,
+          "rmse": 2.023635812537432
+        }
+      }
+    },
+    "ablation_results": {
+      "sequential_only": {
+        "pearson_r": 0.7975400814361975,
+        "pearson_p": 4.138928297599867e-12,
+        "spearman_rho": 0.8122276778284577,
+        "spearman_p": 8.114636275631306e-13
+      }
+    },
+    "computational_performance": {
+      "avg_runtime_per_doc": 0.0032523250579833984,
+      "min_runtime": 1.2636184692382812e-05,
+      "max_runtime": 0.15756440162658691,
+      "total_runtime": 0.16261625289916992
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "synthetic",
+      "examples": [
+        {
+          "input": "The cat sat on the mat. It was happy there. The sun shone bright.",
+          "output": "1.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.1271428571428554",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-1.8428571428571416",
+          "metadata_human_score": 1.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 14
+        },
+        {
+          "input": "Birds fly in the sky. They sing pretty songs. Children love to play.",
+          "output": "2.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-0.2846153846153854",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "1.0153846153846153",
+          "metadata_human_score": 2.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "We went to the park. It was fun. We saw dogs and cats.",
+          "output": "3.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-2.0999999999999996",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-5.23076923076923",
+          "metadata_human_score": 3.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Mom baked a cake. It tasted good. We ate it all up.",
+          "output": "1.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.2466666666666661",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-5.316666666666663",
+          "metadata_human_score": 1.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The dog ran fast. He caught the ball. We played all day.",
+          "output": "2.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-2.2299999999999986",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-2.8999999999999986",
+          "metadata_human_score": 2.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The cat sat on the mat. It was happy there. The sun shone bright.",
+          "output": "3.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.1271428571428554",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-1.8428571428571416",
+          "metadata_human_score": 3.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 14
+        },
+        {
+          "input": "Birds fly in the sky. They sing pretty songs. Children love to play.",
+          "output": "1.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-0.2846153846153854",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "1.0153846153846153",
+          "metadata_human_score": 1.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "We went to the park. It was fun. We saw dogs and cats.",
+          "output": "2.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-2.0999999999999996",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-5.23076923076923",
+          "metadata_human_score": 2.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Mom baked a cake. It tasted good. We ate it all up.",
+          "output": "3.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.2466666666666661",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-5.316666666666663",
+          "metadata_human_score": 3.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The dog ran fast. He caught the ball. We played all day.",
+          "output": "1.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-2.2299999999999986",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-2.8999999999999986",
+          "metadata_human_score": 1.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The cat sat on the mat. It was happy there. The sun shone bright.",
+          "output": "2.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.1271428571428554",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-1.8428571428571416",
+          "metadata_human_score": 2.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 14
+        },
+        {
+          "input": "Birds fly in the sky. They sing pretty songs. Children love to play.",
+          "output": "3.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-0.2846153846153854",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "1.0153846153846153",
+          "metadata_human_score": 3.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "We went to the park. It was fun. We saw dogs and cats.",
+          "output": "1.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-2.0999999999999996",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-5.23076923076923",
+          "metadata_human_score": 1.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Mom baked a cake. It tasted good. We ate it all up.",
+          "output": "2.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.2466666666666661",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-5.316666666666663",
+          "metadata_human_score": 2.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The dog ran fast. He caught the ball. We played all day.",
+          "output": "3.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-2.2299999999999986",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-2.8999999999999986",
+          "metadata_human_score": 3.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The cat sat on the mat. It was happy there. The sun shone bright.",
+          "output": "1.0",
+          "predict_effective_resistance": "-1.333333333333333",
+          "predict_flesch_kincaid": "-1.1271428571428554",
+          "predict_smog": "3.1291",
+          "predict_coleman_liau": "-1.8428571428571416",
+          "metadata_human_score": 1.0,
+          "metadata_num_sentences": 3,
+          "metadata_num_words": 14
+        },
+        {
+          "input": "The restaurant prepared an elaborate meal for the distinguished guests who arrived promptly at seven o'clock.",
+          "output": "4.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "9.825",
+          "predict_smog": "13.023866798666859",
+          "predict_coleman_liau": "15.7",
+          "metadata_human_score": 4.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 16
+        },
+        {
+          "input": "Scientists have discovered a remarkable correlation between atmospheric pressure and weather prediction accuracy.",
+          "output": "5.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.341538461538466",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "26.538461538461544",
+          "metadata_human_score": 5.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "The committee recommended several substantial changes to the proposed legislation regarding environmental protection.",
+          "output": "6.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.341538461538466",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "28.32307692307693",
+          "metadata_human_score": 6.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Students demonstrated exceptional performance in mathematics and science during the annual academic competition.",
+          "output": "4.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "21.249230769230774",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "26.092307692307696",
+          "metadata_human_score": 4.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "The company implemented innovative strategies to enhance productivity and maximize shareholder value.",
+          "output": "5.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.55666666666667",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.750000000000004",
+          "metadata_human_score": 5.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The restaurant prepared an elaborate meal for the distinguished guests who arrived promptly at seven o'clock.",
+          "output": "6.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "9.825",
+          "predict_smog": "13.023866798666859",
+          "predict_coleman_liau": "15.7",
+          "metadata_human_score": 6.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 16
+        },
+        {
+          "input": "Scientists have discovered a remarkable correlation between atmospheric pressure and weather prediction accuracy.",
+          "output": "4.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.341538461538466",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "26.538461538461544",
+          "metadata_human_score": 4.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "The committee recommended several substantial changes to the proposed legislation regarding environmental protection.",
+          "output": "5.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.341538461538466",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "28.32307692307693",
+          "metadata_human_score": 5.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Students demonstrated exceptional performance in mathematics and science during the annual academic competition.",
+          "output": "6.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "21.249230769230774",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "26.092307692307696",
+          "metadata_human_score": 6.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "The company implemented innovative strategies to enhance productivity and maximize shareholder value.",
+          "output": "4.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.55666666666667",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.750000000000004",
+          "metadata_human_score": 4.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The restaurant prepared an elaborate meal for the distinguished guests who arrived promptly at seven o'clock.",
+          "output": "5.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "9.825",
+          "predict_smog": "13.023866798666859",
+          "predict_coleman_liau": "15.7",
+          "metadata_human_score": 5.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 16
+        },
+        {
+          "input": "Scientists have discovered a remarkable correlation between atmospheric pressure and weather prediction accuracy.",
+          "output": "6.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.341538461538466",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "26.538461538461544",
+          "metadata_human_score": 6.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "The committee recommended several substantial changes to the proposed legislation regarding environmental protection.",
+          "output": "4.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.341538461538466",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "28.32307692307693",
+          "metadata_human_score": 4.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Students demonstrated exceptional performance in mathematics and science during the annual academic competition.",
+          "output": "5.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "21.249230769230774",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "26.092307692307696",
+          "metadata_human_score": 5.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "The company implemented innovative strategies to enhance productivity and maximize shareholder value.",
+          "output": "6.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "20.55666666666667",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.750000000000004",
+          "metadata_human_score": 6.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 12
+        },
+        {
+          "input": "The restaurant prepared an elaborate meal for the distinguished guests who arrived promptly at seven o'clock.",
+          "output": "4.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "9.825",
+          "predict_smog": "13.023866798666859",
+          "predict_coleman_liau": "15.7",
+          "metadata_human_score": 4.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 16
+        },
+        {
+          "input": "The epistemological implications of quantum mechanics necessitate a paradigmatic reconceptualization of macroscopic phenomena within contemporary theoretical frameworks.",
+          "output": "7.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "27.82823529411765",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "34.317647058823525",
+          "metadata_human_score": 7.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "Constitutional jurisprudence regarding substantive due process has evolved considerably since the seminal deliberations of the Warren Court.",
+          "output": "8.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "19.49882352941177",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.423529411764708",
+          "metadata_human_score": 8.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "The intersectionality of sociolinguistic determinants manifests in complex morphological variations across demographic cohorts.",
+          "output": "9.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "26.695384615384615",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "32.78461538461539",
+          "metadata_human_score": 9.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Philosophical determinism presents ontological challenges that fundamentally undermine conventional interpretations of volitional agency.",
+          "output": "10.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "31.233846153846155",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "37.246153846153845",
+          "metadata_human_score": 10.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Neuroplasticity research demonstrates that cortical reorganization occurs through mechanisms involving synaptic potentiation and axonal sprouting.",
+          "output": "7.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "24.87333333333333",
+          "predict_smog": "19.287186520377343",
+          "predict_coleman_liau": "32.879999999999995",
+          "metadata_human_score": 7.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 15
+        },
+        {
+          "input": "The epistemological implications of quantum mechanics necessitate a paradigmatic reconceptualization of macroscopic phenomena within contemporary theoretical frameworks.",
+          "output": "8.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "27.82823529411765",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "34.317647058823525",
+          "metadata_human_score": 8.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "Constitutional jurisprudence regarding substantive due process has evolved considerably since the seminal deliberations of the Warren Court.",
+          "output": "9.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "19.49882352941177",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.423529411764708",
+          "metadata_human_score": 9.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "The intersectionality of sociolinguistic determinants manifests in complex morphological variations across demographic cohorts.",
+          "output": "10.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "26.695384615384615",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "32.78461538461539",
+          "metadata_human_score": 10.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Philosophical determinism presents ontological challenges that fundamentally undermine conventional interpretations of volitional agency.",
+          "output": "7.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "31.233846153846155",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "37.246153846153845",
+          "metadata_human_score": 7.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Neuroplasticity research demonstrates that cortical reorganization occurs through mechanisms involving synaptic potentiation and axonal sprouting.",
+          "output": "8.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "24.87333333333333",
+          "predict_smog": "19.287186520377343",
+          "predict_coleman_liau": "32.879999999999995",
+          "metadata_human_score": 8.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 15
+        },
+        {
+          "input": "The epistemological implications of quantum mechanics necessitate a paradigmatic reconceptualization of macroscopic phenomena within contemporary theoretical frameworks.",
+          "output": "9.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "27.82823529411765",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "34.317647058823525",
+          "metadata_human_score": 9.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "Constitutional jurisprudence regarding substantive due process has evolved considerably since the seminal deliberations of the Warren Court.",
+          "output": "10.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "19.49882352941177",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.423529411764708",
+          "metadata_human_score": 10.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "The intersectionality of sociolinguistic determinants manifests in complex morphological variations across demographic cohorts.",
+          "output": "7.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "26.695384615384615",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "32.78461538461539",
+          "metadata_human_score": 7.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Philosophical determinism presents ontological challenges that fundamentally undermine conventional interpretations of volitional agency.",
+          "output": "8.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "31.233846153846155",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "37.246153846153845",
+          "metadata_human_score": 8.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        },
+        {
+          "input": "Neuroplasticity research demonstrates that cortical reorganization occurs through mechanisms involving synaptic potentiation and axonal sprouting.",
+          "output": "9.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "24.87333333333333",
+          "predict_smog": "19.287186520377343",
+          "predict_coleman_liau": "32.879999999999995",
+          "metadata_human_score": 9.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 15
+        },
+        {
+          "input": "The epistemological implications of quantum mechanics necessitate a paradigmatic reconceptualization of macroscopic phenomena within contemporary theoretical frameworks.",
+          "output": "10.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "27.82823529411765",
+          "predict_smog": "21.19438992294339",
+          "predict_coleman_liau": "34.317647058823525",
+          "metadata_human_score": 10.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "Constitutional jurisprudence regarding substantive due process has evolved considerably since the seminal deliberations of the Warren Court.",
+          "output": "7.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "19.49882352941177",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "24.423529411764708",
+          "metadata_human_score": 7.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 17
+        },
+        {
+          "input": "The intersectionality of sociolinguistic determinants manifests in complex morphological variations across demographic cohorts.",
+          "output": "8.0",
+          "predict_effective_resistance": "0.0",
+          "predict_flesch_kincaid": "26.695384615384615",
+          "predict_smog": "18.243605946275583",
+          "predict_coleman_liau": "32.78461538461539",
+          "metadata_human_score": 8.0,
+          "metadata_num_sentences": 1,
+          "metadata_num_words": 13
+        }
+      ]
+    }
+  ]
+}

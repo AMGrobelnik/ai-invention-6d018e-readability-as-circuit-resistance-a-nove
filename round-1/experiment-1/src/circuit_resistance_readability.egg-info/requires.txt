@@ -1,0 +1,7 @@
+numpy
+scipy
+sentence-transformers
+textstat
+nltk
+loguru
+scikit-learn

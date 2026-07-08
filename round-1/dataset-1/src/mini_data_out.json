@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "description": "Selected readability datasets for ML-based readability scoring experiment",
+    "num_datasets": 2,
+    "total_examples": 105328
+  },
+  "datasets": [
+    {
+      "dataset": "SetFit_onestop_english_combined",
+      "examples": [
+        {
+          "input": "1 Flappy Bird \nBe careful what you wish for, especially if you want to invent something new. Recently, Dong Nguyen, the designer of the mobile game Flappy Bird, pulled it from app stores, saying its success – it had been downloaded more than 50 million times, and was making him around £30,000 in advertising revenue each day – had ruined his simple life. He took to his Twitter account to say: “I cannot take this anymore.” \nOK, so regretting making Flappy Bird isn’t quite the same as regretting making a riﬂe, but Nguyen is just the latest in a long line of inventors who wish they hadn’t created a monster. \n2 The labradoodle \nThe labradoodle isn’t a monster – it’s adorable, obviously. But what’s monstrous is the way crossbreed dogs have been bred and marketed since the labradoodle’s inventor, Wally Conron, ﬁrst created the breed in the 1980s. “I’ve done a lot of damage,” he told the Associated Press. “I’ve created a lot of problems. There are a lot of unhealthy and abandoned dogs out there.” Conron came up with the labradoodle when he was working for the Royal Guide Dog Association of Australia to provide a dog for a blind woman whose husband was allergic to dog hair. What he didn’t expect was that the labradoodle – and its other poodle-cross variants, many of which have health problems – would become so popular. \n3 The AK-47 \nSix months before his death in December 2013, Mikhail Kalashnikov, the designer of the assault riﬂe, wrote to the head of the Russian Orthodox Church: “My spiritual torment is unbearable. One and the same question: if my ri ﬂ e killed people, does that mean that I, Mikhail Kalashnikov, 93 years of age, the son of a peasant, Christian and Orthodox by faith, am responsible for people’s deaths, even if they were enemies?” \n4 Electronic tagging \nThe electronic tag was originally conceived in the 1960s as a way of tracking former prisoners’ attendance at schools and workplaces, and rewarding them for good behaviour. Its inventors, Bob Gable and his brother Kirkland, were later horri ﬁ ed that the tag had become a form of control and punishment. “It’s not pleasant,” Kirkland Gable told the Guardian in 2010, “but I’m not in control of the universe. I have to realize there are some things out of my control.” \n5 Pepper spray \nAfter police sprayed peaceful protesters with pepper spray at a University of California campus in 2011, one of the scientists who helped develop it in the 80s denounced its use. “I have never seen such an inappropriate and improper use of chemical agents,” Kamran Loghman told The New York Times. \n6 The ofﬁce cubicle \nIn the late 60s, a new form of ofﬁce was launched, designed to give workers privacy and increase productivity by providing more work space. Instead, it became a way for companies to cram employees into tighter spaces, a visual shorthand for uniformity and soulless work. Its inventor, Bob Propst, said in 1997, “the cubiclizing of people in modern corporations is monolithic insanity.”",
+          "output": "Advance",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 0
+        },
+        {
+          "input": "The last time she performed, we did not have mobile phones. Now, 35 years later, as she performs again, singer Kate Bush sees a very different world. \nThese days, most concerts are now lit up with phones and tablets, but Bush does not want her fans to watch her shows through a screen. \nIn August, before her concerts at the Hammersmith Apollo in London, Bush asked her fans to put down their mobile phones at her gigs. \nBush wrote on her website: “I have a request for all of you who are coming to the shows. We have chosen a theatre, not a large venue or stadium. Please do not take photos or videos during the shows. \n“I very much want to have contact with you as an audience, not with iPhones, iPads or cameras.” \nBush is not the first singer or musician to say she doesn’t like phones at concerts. Roger Daltrey from The Who recently said it was “weird” that people looked at their screen and not the artist on stage. \nHe said: “I feel sorry for them, I really feel sorry for them. Looking at life through a screen and not being in the moment totally – if you’re doing that, you’re 50% there, right? It’s weird.” \nIn 2013, Beyoncé told a fan, “You can’t even sing because you’re too busy filming. Put that damn camera down!” \nRecently, Dutch football fans at PSV Eindhoven protested against the introduction of wi-fi in their stadium. They held up banners that said “No wi-fi. Support the team,” and “You can sit at home.” Manchester United have also told fans to leave their “large electronic devices” at home. \nSinger Jarvis Cocker said, “It seems stupid to have something happening in front of you and look at it on a screen that’s smaller than a cigarette packet.” \nEven in the world of classical music, one of the world’s top pianists surprised the audience in June 2013 when he left the stage because a fan was filming his performance on a smartphone. Krystian Zimerman returned moments later and said: “The destruction of music because of YouTube is enormous.” \nBut Sam Watt says that filming at concerts makes the experience even better. He works for Vyclone, a phone app that puts together many videos uploaded by fans to create one long video of a show. \n“Fans filming is now part of the concert experience – that is a just a fact. We take the videos that people are filming at concerts and mix them together with everybody else who was filming. The result is a really fantastic video,” he said. \n“We think that filming at concerts adds to the experience, and I think that, if Kate Bush came round for a cup of tea, we could have a really interesting discussion about this,” he added. “People are going to film and they want those memories – you’ve got to accept it.”",
+          "output": "Elementary",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 1
+        },
+        {
+          "input": "Noise from ships may disturb animals such as killer whales and dolphins much more than we thought before. New research shows that underwater noise could stop these animals communicating and make it more difficult for them to find food. It is well known that noise from ships disturbs large whales. But, US researchers have found noise also disturbs smaller sea creatures such as killer whales, also known as orcas. Dolphins and porpoises may have the same problems. \n“The main problem is that even a small increase in sound may make it more difficult for whales to find food using echo,” said Scott Veirs, who led the research. “That’s worrying because their food, a kind of salmon, is already quite scarce. Hearing a salmon’s click is probably one of the most difficult things a killer whale does. It is harder to hear that click if there’s a lot of noise around you.”\nThe researchers used underwater microphones to measure the noise made by about 1,600 ships as they passed through Haro Strait, in Washington State, USA. The two-year study recorded the sound made by 12 different types of ship, including cruise ships, container ships and military ships, that passed through the strait about 20 times a day.\nSome ships are quieter than others but the average noise next to all the ships was 173 underwater decibels, the same as 111 decibels through the air – about the sound of a loud rock concert. Whales are not usually right next to ships and so would hear noise of about 60 to 90 decibels – around the level of a vacuum cleaner.\nVeirs said scientists already knew about the effect of underwater noise on large whales. But, the new research shows the danger to smaller whales, dolphins and porpoises. “We think that ships make low-frequency noise, like the sound of lorries or trains,” he said. “Most noise is at that low frequency but there is more background noise in the high frequencies, too. This might be causing a big problem that we need to study more.”\nLots of underwater noise can cause many problems. Whales may have to stay closer together to hear each other. And, if they cannot find food easily, they will need to use their extra blubber. This is a problem because this blubber often contains manmade pollutants that are poisonous to whales if they get into their bodies.\nVeirs said ships that pass near whales need to be quieter. “It should be easy to reduce noise pollution,” he said. “Military ships are much quieter and there could be simple ways of using that technology on normal ships. Another way to reduce noise is to slow down. Reducing speed by six knots could decrease noise by half.”\nSome whale species are safer now because there is less whaling but other types of whale are still in danger for many different reasons. The US has recently protected nearly 40,000 square miles of the Atlantic to save a species of whale with just 500 individuals left.\nIn Europe, killer whales have dangerously high levels of illegal chemicals in their blubber. Scientists are still trying to find out if pollutants caused the deaths of five whales that were found on beaches on the east coast of Britain in January 2016. And, around the coast of Australia, whales are in danger from oil and gas drilling, as well as Japan’s recent decision to start whaling again in the seas of Antarctica.",
+          "output": "Elementary",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 2
+        }
+      ]
+    },
+    {
+      "dataset": "agentlans_readability_train",
+      "examples": [
+        {
+          "input": "We study the adversarial multi-armed bandit problem where partial\nobservations are available and where, in addition to the loss incurred for each\naction, a \\emph{switching cost} is incurred for shifting to a new action. All\npreviously known results incur a factor proportional to the independence number\nof the feedback graph. We give a new algorithm whose regret guarantee depends\nonly on the domination number of the graph. We further supplement that result\nwith a lower bound. Finally, we also give a new algorithm with improved policy\nregret bounds when partial counterfactual feedback is available.",
+          "output": "12.965",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_source": "arxiv",
+          "metadata_row_index": 0
+        },
+        {
+          "input": "The current supernova detection technique used in IceCube relies on the\nsudden deviation of the summed photomultiplier noise rate from its nominal\nvalue during the neutrino burst, making IceCube a $\\approx 3$ Megaton effective\ndetection volume - class supernova detector. While galactic supernovae can be\nresolved with this technique, the supernova neutrino emission spectrum remains\nunconstrained and thus presents a limited potential for the topics related to\nsupernova core collapse models.\n  The paper elaborates analytically on the capabilities of IceCube to detect\nsupernovae through the analysis of hits in the detector correlated in space and\ntime. These arise from supernova neutrinos interacting in the instrumented\ndetector volume along single strings. Although the effective detection volume\nfor such coincidental hits is much smaller ($\\gtrsim 35\\,$kton, about the scale\nof SuperK), a wealth of information is obtained due to the comparatively low\ncoincidental noise rate. We demonstrate that a neutrino flux from a core\ncollapse supernova will produce a signature enabling the resolution of rough\nspectral features and, in the case of a strong signal, providing indication on\nits location.\n  We further discuss the enhanced potential of a rather modest detector\nextension, a denser array in the center of IceCube, within our one dimensional\nanalytic calculation framework. Such an extension would enable the exploration\nof the neutrino sky above a few GeV and the detection of supernovae up to a few\n100's of kilo parsec. However, a $3-4\\,$Mpc detection distance, necessary for\nroutine supernova detection, demands a significant increase of the effective\ndetection volume and can be obtained only with a more ambitious instrument,\nparticularly the boosting of sensor parameters such as the quantum efficiency\nand light collection area.",
+          "output": "18.85",
+          "metadata_fold": 1,
+          "metadata_task_type": "regression",
+          "metadata_source": "arxiv",
+          "metadata_row_index": 1
+        },
+        {
+          "input": "Pascoe could be eccentric, and he would leave during important meetings because he always went to bed at 9pm. He died at his holiday home in Springfield on  11 September 1976.",
+          "output": "8.2",
+          "metadata_fold": 2,
+          "metadata_task_type": "regression",
+          "metadata_source": "wikipedia-en",
+          "metadata_row_index": 2
+        }
+      ]
+    }
+  ]
+}

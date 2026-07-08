@@ -1,0 +1,77 @@
+{
+  "title": "Effective Resistance for Readability Graphs Research",
+  "layman_summary": "Research on computing graph-based electrical resistance metrics from text discourse graphs to predict how readable text is, including methods for graph construction, resistance computation libraries, and benchmark datasets for evaluation.",
+  "summary": "This research artifact provides comprehensive findings on three foundational components for implementing a 'Readability as Circuit Resistance' metric: (1) Computing effective resistance (Kirchhoff index) from graph Laplacian pseudoinverse - identified NetworkX built-in functions (resistance_distance, effective_graph_resistance) and netneurotools library with implementation code examples and numerical stability considerations. (2) Constructing discourse graphs from text - documented three edge construction methods (sequential, similarity-based with SBERT, RST-based), edge weighting schemes, and relevant Python libraries (sentence-transformers, NetworkX, RST parsers). (3) Identifying readability benchmark datasets - compiled detailed comparison of 5 datasets (WeeBit, CLEAR, Newsela, OneStopEnglish, Wikilarge) with sizes, rating scales, access methods, and licensing information. The artifact includes an implementation roadmap with specific library recommendations, sample code for computing resistance scores from text, and an evaluation plan using the CLEAR corpus. Confidence levels are assessed for each finding, and follow-up research questions are provided.",
+  "out_expected_files": {
+    "output": "research_out.json"
+  },
+  "upload_ignore_regexes": [],
+  "answer": "## Comprehensive Research Findings\n\n### 1. Effective Resistance Computation\n\nThe Kirchhoff index (effective graph resistance) is computed as the sum of resistance distances between all node pairs in a graph, which equals n·tr(L⁺) where L⁺ is the Moore-Penrose pseudoinverse of the Laplacian matrix [1, 2]. \n\n**Python Implementation Options:**\n\n1. **NetworkX (Recommended)**: Provides built-in `nx.effective_graph_resistance(G)` and `nx.resistance_distance(G, nodeA, nodeB)` functions [1]. These handle weight inversion automatically (invert_weight=True), use the algorithm from Ellens et al. (2011) [1], and raise appropriate errors for disconnected graphs.\n\n2. **netneurotools**: Offers `effective_resistance(W)` function that computes full resistance matrix using numpy.linalg.pinv [3]. Documentation warns to 'Test before use' [3].\n\n3. **Manual Implementation**: Construct Laplacian with `nx.laplacian_matrix(G)`, compute pseudoinverse with `scipy.sparse.linalg.pinv(L)`, then Kirchhoff index = trace(L⁺) × n [4]. Laplacian is singular so regular inverse cannot be used [4].\n\n**Numerical Stability**: For large graphs (>1000 nodes), consider fast approximation algorithms that estimate diagonal entries of pseudoinverse in nearly linear time [5].\n\n### 2. Discourse Graph Construction Methods\n\n**Method 1: Sequential Edges** - Connect sentences in order (i to i+1). Simple baseline capturing local coherence but misses long-distance semantic relationships.\n\n**Method 2: Similarity-Based Edges (Recommended)** - Compute cosine similarity between sentence embeddings and add edges where similarity > threshold (e.g., 0.3) [7]. Implementation using sentence-transformers library:\n```python\nfrom sentence_transformers import SentenceTransformer\nmodel = SentenceTransformer('all-MiniLM-L6-v2')\nembeddings = model.encode(sentences)\n# Add edges where cosine similarity > threshold\n```\nThis method balances simplicity with ability to capture semantic structure [7].\n\n**Method 3: RST-Based Edges** - Use Rhetorical Structure Theory parsers (e.g., isanlp_rst [6], feng-hirst-rst-parser) to identify discourse relations and construct edges based on rhetorical structure. Most linguistically motivated but complex to implement [6].\n\n**Edge Weighting Schemes**: (1) Cosine distance: weight = 1 - cosine_distance, (2) Position-based: exponential decay with sentence distance, (3) Discourse relation strength from RST parser, (4) Hybrid combinations.\n\n### 3. Readability Benchmark Datasets\n\n**Dataset Comparison:**\n\n| Dataset | Size | Rating Scale | Access | License |\n|----------|------|--------------|--------|---------|\n| **CLEAR** | ~5,000 excerpts | Continuous (3rd-12th grade) | GitHub (scrosseye/CLEAR-Corpus) [9] | CC BY-NC-SA 4.0 |\n| **WeeBit** | 6,388 texts (3,125 downsampled) | 5 levels (ages 7-16) | GitHub (shlomihod/deep-text-eval) [8] | Research use |\n| **Newsela** | 1,911 articles | 5 levels (2nd-12th grade) | Request at newsela.com [8] | Proprietary |\n| **OneStopEnglish** | 189 texts × 3 levels | 3 levels (Elem/Inter/Adv) | GitHub (nishkalavallabhi/OneStopEnglishCorpus) [10] | Research use |\n| **Wikilarge** | ~296,402 sentences | Simplification pairs | HuggingFace (waboucay/wikilarge) | Various |\n\n**Recommendation**: Use **CLEAR corpus** for primary evaluation because it has open access via GitHub [9], good size (5,000 examples), continuous readability scores (better for regression), and clear licensing (CC BY-NC-SA 4.0) [9].\n\n### 4. Implementation Roadmap\n\n**Graph Construction**: Use similarity-based edges with SBERT embeddings [7], threshold 0.3-0.5 (tune on validation set).\n\n**Resistance Computation**: Use NetworkX's `effective_graph_resistance()` function [1] - simple API, handles edge cases, well-documented.\n\n**Evaluation**: CLEAR corpus [9], metrics: Pearson correlation, RMSE, MAE vs. human ratings, baselines: Flesch-Kincaid, SMOG, BERT-based regressor.\n\n**Sample Code Structure**:\n```python\nimport networkx as nx\nfrom sentence_transformers import SentenceTransformer\n\nclass ReadabilityResistanceScorer:\n    def __init__(self, threshold=0.3):\n        self.model = SentenceTransformer('all-MiniLM-L6-v2')\n        self.threshold = threshold\n    \n    def text_to_graph(self, text):\n        sentences = [s.strip() for s in text.split('.') if s.strip()]\n        G = nx.Graph()\n        for i, sent in enumerate(sentences):\n            G.add_node(i, sentence=sent)\n        embeddings = self.model.encode(sentences)\n        for i in range(len(sentences)):\n            for j in range(i+1, len(sentences)):\n                sim = np.dot(embeddings[i], embeddings[j])\n                if sim > self.threshold:\n                    G.add_edge(i, j, weight=sim)\n        return G\n    \n    def compute_resistance_score(self, text):\n        G = self.text_to_graph(text)\n        return nx.effective_graph_resistance(G)\n```\n\n### 5. Key Recommendations\n\n**Do's:**\n- Use NetworkX's built-in functions for resistance computation [1]\n- Apply SBERT (sentence-transformers) for semantic similarity [7]\n- Start with CLEAR corpus for evaluation [9]\n- Normalize resistance scores for comparability (e.g., divide by n²)\n\n**Don'ts:**\n- Don't use directed graphs (NetworkX functions require undirected) [1]\n- Don't assume all edges should have equal weight\n- Don't ignore disconnected components (effective resistance is infinite)\n- Don't rely solely on Newsela (access requires approval) [8]\n\n### 6. Confidence Assessment\n\n**High Confidence** (strong evidence from multiple sources):\n- NetworkX has stable, well-documented resistance functions [1]\n- CLEAR corpus is publicly accessible via GitHub [9]\n- SBERT provides reliable sentence embeddings [7]\n\n**Medium Confidence** (needs empirical validation):\n- Optimal graph construction method (multiple valid approaches)\n- Similarity threshold selection (0.3-0.5 range suggested)\n- Resistance score interpretation (hypothesis: lower = more readable)\n\n**Low Confidence** (speculative, requires experimentation):\n- Whether resistance metric will correlate with human judgments\n- Computational efficiency for real-time applications\n- Generalizability across different text genres and domains",
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.distance_measures.effective_graph_resistance.html",
+      "title": "NetworkX effective_graph_resistance Documentation",
+      "summary": "Official documentation for NetworkX function to compute Kirchhoff index (effective graph resistance) with implementation details, parameters, and examples."
+    },
+    {
+      "index": 2,
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0024379511001443",
+      "title": "Effective graph resistance - Ellens et al. 2011",
+      "summary": "Foundational paper defining effective graph resistance, its computation from Laplacian pseudoinverse, and applications in graph analysis."
+    },
+    {
+      "index": 3,
+      "url": "https://netneurotools.readthedocs.io/en/latest/generated/netneurotools.metrics.effective_resistance.html",
+      "title": "netneurotools effective_resistance Documentation",
+      "summary": "Documentation for alternative Python implementation of effective resistance computation using numpy.linalg.pinv for Laplacian pseudoinverse."
+    },
+    {
+      "index": 4,
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html",
+      "title": "NumPy pinv Documentation",
+      "summary": "Documentation for Moore-Penrose pseudoinverse computation using SVD, relevant for handling singular Laplacian matrices."
+    },
+    {
+      "index": 5,
+      "url": "https://arxiv.org/abs/2310.05527",
+      "title": "Diagonal of Pseudoinverse of Graph Laplacian - Lu et al. 2023",
+      "summary": "Recent paper on fast approximation algorithms for computing diagonal entries of Laplacian pseudoinverse, relevant for large graphs."
+    },
+    {
+      "index": 6,
+      "url": "https://github.com/tchewik/isanlp_rst",
+      "title": "isanlp_rst RST Discourse Parser",
+      "summary": "GitHub repository for Rhetorical Structure Theory discourse parser that can be used for linguistically-motivated graph construction."
+    },
+    {
+      "index": 7,
+      "url": "https://sbert.net/",
+      "title": "Sentence Transformers Documentation",
+      "summary": "Library for computing sentence embeddings (SBERT) used for semantic similarity-based graph construction with pre-trained transformer models."
+    },
+    {
+      "index": 8,
+      "url": "https://arxiv.org/pdf/2006.00377",
+      "title": "Linguistic Features for Readability Assessment - Deutsch et al. 2020",
+      "summary": "Comprehensive paper describing WeeBit and Newsela corpora with details on dataset construction, accessibility, and readability assessment approaches."
+    },
+    {
+      "index": 9,
+      "url": "https://github.com/scrosseye/CLEAR-Corpus",
+      "title": "CLEAR Corpus GitHub Repository",
+      "summary": "Official repository for CommonLit Ease of Readability (CLEAR) corpus with ~5,000 excerpts, readability scores, and metadata available under CC BY-NC-SA 4.0 license."
+    },
+    {
+      "index": 10,
+      "url": "https://aclanthology.org/W18-0535/",
+      "title": "OneStopEnglish Corpus - Vajjala & Lučić 2018",
+      "summary": "Paper introducing OneStopEnglish corpus with 189 texts at three reading levels (Elementary, Intermediate, Advanced) for readability assessment and text simplification."
+    }
+  ],
+  "follow_up_questions": [
+    "What is the optimal similarity threshold for constructing similarity-based edges in discourse graphs for readability assessment, and how does it vary across different text genres?",
+    "How does the Kirchhoff index correlate with traditional readability metrics (Flesch-Kincaid, SMOG) across different types of text (narrative, expository, technical)?",
+    "Can the resistance metric be computed efficiently for long documents (>50 sentences) using approximation algorithms, and what accuracy is lost compared to exact computation?"
+  ]
+}
