@@ -1,0 +1,47 @@
+[
+  {
+    "text_id": 0,
+    "text": "The cat sat on the mat.",
+    "human_readability_score": 1.0
+  },
+  {
+    "text_id": 1,
+    "text": "The cat sat on the mat. It was happy there.",
+    "human_readability_score": 1.5
+  },
+  {
+    "text_id": 2,
+    "text": "The cat sat on the mat. It was happy there. The sun shone bright.",
+    "human_readability_score": 2.0
+  },
+  {
+    "text_id": 3,
+    "text": "The restaurant prepared an elaborate meal. The distinguished guests arrived promptly. They enjoyed the evening. The atmosphere was delightful.",
+    "human_readability_score": 5.0
+  },
+  {
+    "text_id": 4,
+    "text": "Scientists have discovered a remarkable correlation. Atmospheric pressure affects weather prediction accuracy. This research has important implications. Future studies should explore applications. The scientific community is excited.",
+    "human_readability_score": 6.0
+  },
+  {
+    "text_id": 5,
+    "text": "The committee recommended substantial changes to the proposed legislation. Environmental protection measures were strengthened. Many representatives supported these measures. The bill passed with bipartisan support. Citizens celebrated this achievement.",
+    "human_readability_score": 7.0
+  },
+  {
+    "text_id": 6,
+    "text": "The epistemological implications are profound. Quantum mechanics necessitates paradigmatic reconceptualization. Contemporary theoretical frameworks must adapt accordingly. Researchers face significant challenges. New methodologies are required. The scientific community must evolve.",
+    "human_readability_score": 8.0
+  },
+  {
+    "text_id": 7,
+    "text": "Constitutional jurisprudence continues to evolve. Substantive due process remains contentious. The Warren Court's deliberations were particularly significant. Modern interpretations vary considerably. Legal scholars disagree on many points. The Supreme Court may revisit this issue. Future rulings will be important.",
+    "human_readability_score": 9.0
+  },
+  {
+    "text_id": 8,
+    "text": "The intersectionality of determinants is complex. Sociolinguistic variations manifest across cohorts. Demographic analysis reveals morphological complexity. Linguistic researchers study these patterns extensively. Theoretical frameworks continue to develop. Empirical evidence supports these claims. Academic discourse remains vibrant. New methodologies emerge regularly. The field continues to evolve rapidly.",
+    "human_readability_score": 10.0
+  }
+]

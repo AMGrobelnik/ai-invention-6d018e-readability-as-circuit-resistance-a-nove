@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "description": "Mini demo dataset for readability scoring experiment",
+    "num_datasets": 2,
+    "total_examples": 10
+  },
+  "datasets": [
+    {
+      "dataset": "SetFit_onestop_english_demo",
+      "examples": [
+        {
+          "input": "The cat sat on the mat. It was happy to be there.",
+          "output": "Elementary",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 0
+        },
+        {
+          "input": "Children play in the park every day. They enjoy the sunshine and fresh air.",
+          "output": "Elementary",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 1
+        },
+        {
+          "input": "The implementation of sustainable energy solutions requires comprehensive planning and strategic allocation of resources.",
+          "output": "Intermediate",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 2
+        },
+        {
+          "input": "Researchers have identified several methodological approaches to address the underlying complexities of this phenomenon.",
+          "output": "Intermediate",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 3
+        },
+        {
+          "input": "Quantum entanglement represents a fundamental departure from classical mechanics, wherein particles maintain instantaneous correlations regardless of spatial separation, challenging our understanding of locality and causality.",
+          "output": "Advance",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_row_index": 4
+        }
+      ]
+    },
+    {
+      "dataset": "agentlans_readability_demo",
+      "examples": [
+        {
+          "input": "I like to read books. They are fun.",
+          "output": "2.5",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_source": "simple",
+          "metadata_row_index": 0
+        },
+        {
+          "input": "The weather today is very nice. We can go to the park.",
+          "output": "4.0",
+          "metadata_fold": 1,
+          "metadata_task_type": "regression",
+          "metadata_source": "simple",
+          "metadata_row_index": 1
+        },
+        {
+          "input": "Despite the challenges faced by the organization, management remains optimistic about future growth prospects.",
+          "output": "10.5",
+          "metadata_fold": 2,
+          "metadata_task_type": "regression",
+          "metadata_source": "news",
+          "metadata_row_index": 2
+        },
+        {
+          "input": "The algorithm utilizes a gradient descent optimization approach to minimize the loss function across multiple iterations.",
+          "output": "14.0",
+          "metadata_fold": 3,
+          "metadata_task_type": "regression",
+          "metadata_source": "technical",
+          "metadata_row_index": 3
+        },
+        {
+          "input": "Neuroplasticity refers to the brain's remarkable capacity to reorganize neural pathways and synapses in response to injury, experience, or environmental changes throughout an individual's lifespan.",
+          "output": "18.5",
+          "metadata_fold": 4,
+          "metadata_task_type": "regression",
+          "metadata_source": "academic",
+          "metadata_row_index": 4
+        }
+      ]
+    }
+  ]
+}

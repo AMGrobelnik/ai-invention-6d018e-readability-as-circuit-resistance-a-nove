@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "description": "Mini demo dataset for Readability as Circuit Resistance experiment",
+    "num_datasets": 1,
+    "total_examples": 6
+  },
+  "datasets": [
+    {
+      "dataset": "demo_readability",
+      "examples": [
+        {
+          "input": "The cat sat on the mat. It was happy. The sun was shining. Birds flew in the sky. A dog ran in the park. Children played with a ball.",
+          "output": "2.0",
+          "metadata_task_type": "regression"
+        },
+        {
+          "input": "Photosynthesis is a process used by plants and other organisms to convert light energy into chemical energy that, through cellular respiration, can later be released to fuel the organism's metabolic activities.",
+          "output": "10.0",
+          "metadata_task_type": "regression"
+        },
+        {
+          "input": "The quantum Hall effect is a topological quantum phenomenon observed in two-dimensional electron systems at very low temperatures and strong magnetic fields. It is characterized by the quantization of the Hall conductance.",
+          "output": "15.0",
+          "metadata_task_type": "regression"
+        },
+        {
+          "input": "She went to the store. She bought some apples. They were red and sweet. She ate one. It tasted good. She went home.",
+          "output": "3.0",
+          "metadata_task_type": "regression"
+        },
+        {
+          "input": "Machine learning is a subset of artificial intelligence that focuses on building systems that learn from data. Instead of being explicitly programmed, these systems improve their performance on a specific task over time by being exposed to more data.",
+          "output": "8.0",
+          "metadata_task_type": "regression"
+        },
+        {
+          "input": "The researcher postulated that the anomalous behavior observed in the superconducting state could be attributed to the spontaneous symmetry breaking induced by the external magnetic field, thereby necessitating a comprehensive reevaluation of the prevailing theoretical framework.",
+          "output": "18.0",
+          "metadata_task_type": "regression"
+        }
+      ]
+    }
+  ]
+}
